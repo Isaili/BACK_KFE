@@ -1,4 +1,4 @@
-// src/server.js - VERSIÓN SIMPLIFICADA Y FUNCIONAL
+
 const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');

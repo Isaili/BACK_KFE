@@ -1,13 +1,11 @@
-// src/server.js - VERSIÓN SIMPLIFICADA Y FUNCIONAL
+
 const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
 const connectDB = require('./config/database');
 
-// Configurar variables de entorno
 dotenv.config();
 
-// Crear aplicación Express
 const app = express();
 
 // Middlewares esenciales

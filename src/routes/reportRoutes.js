@@ -9,7 +9,7 @@ router.get('/sales-chart', reportController.getSalesChartData);
 router.get('/summary', reportController.getSalesSummary);
 router.get('/by-category', reportController.getSalesByCategory);
 
-// ⭐ NUEVA RUTA para gráfica de productos
+// NUEVA RUTA para gráfica de productos
 router.get('/products-chart', reportController.getProductsChartData);
 
 module.exports = router;

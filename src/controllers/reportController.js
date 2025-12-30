@@ -7,7 +7,7 @@ function getLocalDate(utcDate) {
   return new Date(utcDate.getTime() - (utcDate.getTimezoneOffset() * 60000));
 }
 
-// 1. Productos vendidos en un período de fecha - VERSIÓN CON FECHA LOCAL
+//  Productos vendidos en un período de fecha - VERSIÓN CON FECHA LOCAL
 exports.getProductsSoldByDate = async (req, res) => {
   try {
     const { startDate, endDate, useLocalDate = 'true' } = req.query;
@@ -242,12 +242,12 @@ exports.getSalesChartData = async (req, res) => {
   }
 };
 
-// ⭐⭐ NUEVO ENDPOINT: Gráfica de ventas por productos ⭐⭐
+// : Gráfica de ventas por productos 
 exports.getProductsChartData = async (req, res) => {
   try {
     const { 
-      top = 10,           // Top N productos
-      sortBy = 'quantity', // 'quantity' o 'revenue'
+      top = 10,           
+      sortBy = 'quantity', 
       startDate, 
       endDate,
       category,

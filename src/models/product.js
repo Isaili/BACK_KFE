@@ -17,7 +17,7 @@ if (mongoose.models.Product) {
     },
     category: {
       type: String,
-      enum: ['Bebida Caliente', 'Bebida Fría', 'Pastelería', 'Sandwich', 'Otros'],
+      enum: ['Bebida Caliente', 'Bebida Fría', 'Pastelería', 'Sandwich','Postre', 'Otros'],
       required: true
     },
     price: {
