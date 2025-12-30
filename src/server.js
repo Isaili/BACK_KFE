@@ -25,6 +25,7 @@ app.get('/api/products/:id', productController.getProductById);
 app.post('/api/products', productController.createProduct);
 app.put('/api/products/:id', productController.updateProduct);
 app.delete('/api/products/:id', productController.deleteProduct);
+app.delete('/api/products/:id/permanent', productController.deleteProductPermanently);
 
 // Ventas
 const saleController = require('./controllers/saleController');
@@ -40,7 +41,7 @@ app.get('/api/reports/sales-chart', reportController.getSalesChartData);
 // ========== RUTA DE BIENVENIDA ==========
 app.get('/', (req, res) => {
   res.json({
-    message: '☕ KFE Coffee API v1.0',
+    message: '☕ KFE Coffee API v1.0 produccion',
     status: 'online',
     documentation: {
       baseUrl: 'http://localhost:3000',
@@ -85,14 +86,13 @@ app.use((error, req, res, next) => {
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`
-  ╔══════════════════════════════════════════╗
-  ║         ☕ KFE COFFEE API v1.0           ║
-  ╠══════════════════════════════════════════╣
-  ║  ✅ Servidor activo en puerto: ${PORT}     ║
+  ╔═══════════════════════════════════════╗
+  ║   ☕ KFE COFFEE API v1.0 produccion   ║
+  ╠═══════════════════════════════════════║
   ║  🔗 URL: http://localhost:${PORT}         ║
-  ║  📊 Base: MongoDB Atlas                 ║
-  ║  🚀 Estado: Conectado                   ║
-  ╚══════════════════════════════════════════╝
+  ║  📊 Base: MongoDB Atlas               ║
+  ║  🚀 Estado: Conectado                 ║
+  ╚════════════════════════════════════════╝
   `);
 });
 

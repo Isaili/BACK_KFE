@@ -123,3 +123,28 @@ exports.deleteProduct = async (req, res) => {
     });
   }
 };
+
+// Eliminar producto permanentemente (borrado físico)
+exports.deleteProductPermanently = async (req, res) => {
+  try {
+    const product = await Product.findByIdAndDelete(req.params.id);
+    
+    if (!product) {
+      return res.status(404).json({
+        success: false,
+        error: 'Producto no encontrado'
+      });
+    }
+    
+    res.json({
+      success: true,
+      message: 'Producto eliminado permanentemente',
+      data: product
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      error: error.message
+    });
+  }
+};

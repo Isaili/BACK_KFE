@@ -1,0 +1,99 @@
+✅ para obtener todos los productos
+GET http://localhost:3000/api/products
+
+✅para agregar un nuevo producto 
+ POST http://localhost:3000/api/products
+
+{
+  "name": "cafe Geisa",
+  "description": "bebida fria con extracto de vainillas",
+  "category": "Otros",
+  "price": 78,
+  "cost": 50,
+  "stock": 10
+}
+
+✅ para Actualizar un producto
+ PUT http://localhost:3000/api/products/ID_PRODUCTO
+
+ {
+  "name": "Capuchino",
+  "description": "Café con chocolate blanco",
+  "category": "Bebida Caliente",
+  "price": 4.50,
+  "cost": 1.60,
+  "stock": 440
+}
+
+✅ para obtener un producto especifico
+GET http://localhost:3000/api/products/ID_PRODUCTO
+
+✅para eliminar o desactivar un productos 
+DELETE http://localhost:3000/api/products/ID_PRODUCTO
+
+✅para eliminar permanenete 
+DELETE http://localhost:3000/api/products/ID_PRODUCTO/permanent
+
+
+✅ para hacer una venta 
+POST localhost:3000/api/sales
+
+{
+  "items": [
+    {
+      "productId": "6952c17ab2a1283456851ecc",
+      "quantity": 3
+    },
+    {
+      "productId": "6951b71b37f3d8a3b7ee2de7", 
+      "quantity": 1
+    }
+  ],
+  "paymentMethod": "Efectivo",
+  "seller": "Isai"
+}
+
+✅para obtener los reportes de ventas 
+GET http://localhost:3000/api/reports/sales-chart
+
+✅para obtener reportes d ventas pero por fechas filtradas 
+GET http://localhost:3000/api/reports/products-sold?startDate=2025-12-28&endDate=2025-12-29
+
+
+✅ OBTENER EL TOP 3 DE LOS PRODUCTOS MAS VENDIDOS
+ GET http://localhost:3000/api/reports/top-products
+
+✅ PARA OBTENER TODS LAS VENTAS 
+ GET /localhost:3000/api/sales
+
+
+
+
+
+
+
+
+✅ CRUD Productos:
+POST   /api/products          - Crear producto
+GET    /api/products          - Listar productos
+GET    /api/products/:id      - Obtener producto
+PUT    /api/products/:id      - Actualizar producto
+DELETE /api/products/:id      - Eliminar (desactivar) producto
+
+✅ Punto de Venta:
+POST   /api/sales             - Registrar nueva venta
+GET    /api/sales             - Listar ventas (con filtros)
+
+✅ Reportes:
+GET    /api/reports/products-sold    - Productos vendidos por fecha
+GET    /api/reports/top-products     - Top 3 productos más vendidos
+GET    /api/reports/sales-chart      - Datos para gráfica de ventas
+
+GET  http://localhost:3000/api/products    - Listar productos
+✅ POST http://localhost:3000/api/products    - Crear producto
+✅ POST http://localhost:3000/api/sales       - Registrar venta
+✅ GET  http://localhost:3000/api/reports/top-products?period=week
+# Verifica todas las ventas registradas
+curl http://localhost:3000/api/sales
+
+
